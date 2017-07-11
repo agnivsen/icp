@@ -19,3 +19,30 @@ All the important code snippets are in *basicICP.py*. The main functions are:
 
 *transformations.py* has been taken from [the source code by Christoph Gohlke](http://www.lfd.uci.edu/~gohlke/code/transformations.py.html)
 
+_____________________________
+
+An example of how to use the code has been given in *basicICP.py*
+
+```python
+fileOriginal = '/icp/data/original.xyz'
+deformed = '/icp/data/deformed.xyz'
+
+source_points = read_file_original(fileOriginal)
+dest_points_et_normal = read_file_deformed(deformed)
+
+initial = np.array([[0.01], [0.05], [0.01], [0.001], [0.001], [0.001]])
+
+# **********************************************************************
+# Uncomment one of the following lines to trigger the respective module:
+# **********************************************************************
+
+
+#icp_point_to_plane(source_points,dest_points_et_normal,0)
+
+#icp_point_to_point_lm(source_points,dest_points_et_normal,initial,0)
+
+icp_point_to_plane_lm(source_points,dest_points_et_normal,initial,0)
+```
+
+This implementation does not use a CAD model for point-to-plane registration. You will need the two point clouds in .xyz format.
+
