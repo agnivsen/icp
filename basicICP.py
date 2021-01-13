@@ -263,8 +263,8 @@ def icp_point_to_plane_lm(source_points, dest_points,initial,loop):
         _J = np.array([a1, a2, a3, a4, a5, a6])
         _e = np.array([_residual])
         
-    J.append(_J)
-    e.append(_e)
+        J.append(_J)
+        e.append(_e)
         
     jacobian = np.array(J)
     residual = np.array(e)
