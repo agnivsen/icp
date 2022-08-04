@@ -1,4 +1,4 @@
-# icp
+# Iterative Closest Point (ICP)
 A tutorial on iterative closest point using Python
 
 The following has been implemented here:
